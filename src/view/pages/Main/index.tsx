@@ -2,7 +2,7 @@
 import React, { FC, useRef, useState } from 'react';
 
 // Components
-import { ErrorBoundary, Todo, Table } from '../../components';
+import { ErrorBoundary, Todo } from '../../components';
 
 // Api
 import { useTodosQuery, useTodosMutations } from '../../../bus/todos';
@@ -22,13 +22,6 @@ const Main: FC = () => {
     const { togglersRedux: { isOnline }} = useTogglersRedux();
     const { data, loading } = useTodosQuery();
     const { createTodo, updateTodo, deleteTodo } = useTodosMutations();
-
-    const fakeTableData = [
-        [ 'Race', 'Class', 'Name' ],
-        [ 'Dwarf', 'Warrior', 'Durin' ],
-        [ 'Hobbit', 'Rouge', 'Bilbo' ],
-        [ 'Human', 'Mage', 'Hendalf' ],
-    ];
 
     if (loading) {
         return <Spinner />;
@@ -74,7 +67,6 @@ const Main: FC = () => {
                         />
                     ))
                 }
-                <Table data = { fakeTableData } />
             </main>
         </Container>
     );
