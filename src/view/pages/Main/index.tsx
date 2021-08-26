@@ -1,5 +1,6 @@
 // Core
 import React, { FC, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
 import { ErrorBoundary, Todo } from '../../components';
@@ -68,6 +69,9 @@ const Main: FC = () => {
                     ))
                 }
             </main>
+            <Link to = './UserInfo'>
+                <Button>User Information</Button>
+            </Link>
         </Container>
     );
 };

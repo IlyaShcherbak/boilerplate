@@ -4,13 +4,13 @@ import React, { FC, useState } from 'react';
 // Styles
 import { TableContainer, TableRow, TableCell, TableHead } from './styles';
 
+
 type PropTypes = {
     data: Array<Array<string>>;
 };
 
 export const Table: FC<PropTypes> = ({ data }) => {
     const [ selectedRow, setSelectedRow ] = useState<number>();
-
 
     return (
         <TableContainer>

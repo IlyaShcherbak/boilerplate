@@ -19,13 +19,13 @@ export const Private: FC = () => {
         <Switch>
             <Route
                 exact
-                path = '/'>
-                <Main />
+                path = '/UserInfo'>
+                <UserInfo />
             </Route>
             <Route
                 exact
-                path = '/UserInfo'>
-                <UserInfo />
+                path = '/'>
+                <Main />
             </Route>
             <Redirect to = '/form' />
         </Switch>

@@ -1,8 +1,12 @@
 //Core
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
 import { ErrorBoundary, Table } from '../../components';
+
+// Elements
+import { Button } from '../../elements';
 
 type PropTypes = {};
 
@@ -15,7 +19,12 @@ const UserInfo: FC<PropTypes> = () => {
     ];
 
     return (
-        <Table data = { fakeTableData } />
+        <>
+            <Table data = { fakeTableData } />
+            <Link to = '/'>
+                <Button>Main Page</Button>
+            </Link>
+        </>
     );
 };
 
