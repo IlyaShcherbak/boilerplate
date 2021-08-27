@@ -11,6 +11,7 @@ type PropTypes = {
 
 export const Table: FC<PropTypes> = ({ data }) => {
     const [ selectedRow, setSelectedRow ] = useState<number>();
+    const backGroundColor = 'cadetblue';
 
     return (
         <TableContainer>
@@ -23,7 +24,7 @@ export const Table: FC<PropTypes> = ({ data }) => {
                             {
                                 row.map((cell) => {
                                     if (index === 0) {
-                                        return <TableHead>{cell}</TableHead>;
+                                        return <TableHead backGroundColor = { backGroundColor }>{cell}</TableHead>;
                                     }
 
                                     return <TableCell>{cell}</TableCell>;

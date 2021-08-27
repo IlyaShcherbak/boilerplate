@@ -5,12 +5,13 @@ export const TableContainer = styled.table`
     margin: 15px 40px 30px;
 `;
 
-export const TableHead = styled.th`
+export const TableHead = styled.th<{ backGroundColor :string}>`
     border-bottom: 2px solid ${({ theme }) => theme.first.primary};
     padding: 10px 20px;
     font-weight: 600;
     font-size: 20px;
     color: ${({ theme }) => theme.first.primary};
+    background-color: ${ (props) => props.backGroundColor };
 `;
 
 export const TableRow = styled.tr`
