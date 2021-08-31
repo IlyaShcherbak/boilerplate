@@ -5,13 +5,16 @@ export const TableContainer = styled.table`
     margin: 15px 40px 30px;
 `;
 
-export const TableHead = styled.th<{ backGroundColor :string}>`
+type thProps = {
+    bgColor: string,
+};
+export const TableHead = styled.th<thProps>`
     border-bottom: 2px solid ${({ theme }) => theme.first.primary};
     padding: 10px 20px;
     font-weight: 600;
     font-size: 20px;
     color: ${({ theme }) => theme.first.primary};
-    background-color: ${ (props) => props.backGroundColor };
+    background-color: ${ (props) => props.bgColor };
 `;
 
 export const TableRow = styled.tr`
@@ -33,4 +36,5 @@ export const TableRow = styled.tr`
 export const TableCell = styled.td`
     border-bottom: 1px solid ${({ theme }) => theme.first.secondary};
     padding: 10px 20px;
+    text-align: center;
 `;

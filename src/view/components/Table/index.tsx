@@ -6,12 +6,12 @@ import { TableContainer, TableRow, TableCell, TableHead } from './styles';
 
 
 type PropTypes = {
-    data: Array<Array<string>>;
+    data: Array<Array<string>>,
+    headColor?: string,
 };
 
-export const Table: FC<PropTypes> = ({ data }) => {
+export const Table: FC<PropTypes> = ({ data, headColor = 'pink' }) => {
     const [ selectedRow, setSelectedRow ] = useState<number>();
-    const backGroundColor = 'cadetblue';
 
     return (
         <TableContainer>
@@ -24,10 +24,15 @@ export const Table: FC<PropTypes> = ({ data }) => {
                             {
                                 row.map((cell) => {
                                     if (index === 0) {
-                                        return <TableHead backGroundColor = { backGroundColor }>{cell}</TableHead>;
+                                        return (
+                                            <TableHead
+                                                bgColor = { headColor }>
+                                                {cell}
+                                            </TableHead>
+                                        );
                                     }
 
-                                    return <TableCell>{cell}</TableCell>;
+                                    return <TableCell >{cell}</TableCell>;
                                 })
                             }
                         </TableRow>

@@ -17,10 +17,14 @@ const UserInfo: FC<PropTypes> = () => {
         [ 'Hobbit', 'Rouge', 'Bilbo' ],
         [ 'Human', 'Mage', 'Hendalf' ],
     ];
+    const color = '#5f9ea0';
 
     return (
         <>
-            <Table data = { fakeTableData } />
+            <Table
+                data = { fakeTableData }
+                headColor = { color }
+            />
             <Link to = '/'>
                 <Button>Main Page</Button>
             </Link>
