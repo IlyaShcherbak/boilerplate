@@ -72,6 +72,9 @@ const Main: FC = () => {
             <Link to = './UserInfo'>
                 <Button>User Information</Button>
             </Link>
+            <Link to = './CourseTasks'>
+                <Button>Course tasks</Button>
+            </Link>
         </Container>
     );
 };

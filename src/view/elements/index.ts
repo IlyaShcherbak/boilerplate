@@ -3,3 +3,6 @@ export * from './Input';
 export * from './Textarea';
 export * from './Spinner';
 export * from './AdaptiveScroll';
+export * from './Tag';
+export * from './CommentsCounter';
+export * from './LikesCounter';
