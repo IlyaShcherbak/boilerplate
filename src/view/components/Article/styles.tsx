@@ -27,6 +27,21 @@ export const Poster = styled.div`
     overflow: hidden;
 `;
 
+export const UserBlock = styled.div`
+    position: absolute;
+    font-family: Helvetica;
+    display: flex;
+    align-items: center;
+    margin: 15px;
+
+    .avatar {
+        border: 1px solid black;
+        border-radius: 50%;
+        height: 75px;
+        margin-right: 10px;
+    }
+`;
+
 export const Image = styled.img`
     height: 100%;
 `;

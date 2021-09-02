@@ -20,6 +20,7 @@ export const Accordion: FC<PropTypes> = ({ data, title = 'Accordion by def props
                 return (
                     <AccordionItem
                         className = { selectedAccordion === index ? 'selected' : '' }
+                        key = { `accordion-item-${index}` }
                         onClick = { () => setSelectedAccordion(index) }>
                         <AccordionQuestion className = 'accordion-question'>
                             <span>{`${index + 1}. ${accordionItem.question}`}</span>

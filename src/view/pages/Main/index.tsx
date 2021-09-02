@@ -69,6 +69,7 @@ const Main: FC = () => {
                     ))
                 }
             </main>
+
             <Link to = './UserInfo'>
                 <Button>User Information</Button>
             </Link>

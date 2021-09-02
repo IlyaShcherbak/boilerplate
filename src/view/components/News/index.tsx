@@ -1,15 +1,51 @@
 //Core
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
+
+// Hooks
+import { api } from '../../../bus/hometask/api';
 
 //Components
 import { Article } from '../Article';
 import { Accordion } from '../Accordion';
 
+// Elements
+import { Spinner } from '../../elements';
+
 // Styles
-import { StyledNews } from './styles';
+import { StyledNews, ServerError } from './styles';
 
 //Data
-import data from './source.json';
+import dataNews from './source.json';
+
+export const useApiLoader = () => {
+    const [ fetchedData, setFetchedData ] = useState([]);
+    const [ isFetching, setIsFetching ] = useState(false);
+    const [ isServerError, setIsServerError ] = useState(false);
+
+    useEffect(() => {
+        (async () => {
+            setIsFetching(true);
+            const responceJson = await api.users.fetch();
+
+            console.log(responceJson);
+
+            if (responceJson.status !== 200) {
+                setIsServerError(true);
+            } else {
+                const responce = await responceJson.json();
+                setFetchedData(responce.data);
+            }
+            setIsFetching(false);
+        })();
+    }, []);
+    console.log(isServerError);
+
+    return {
+        isFetching,
+        fetchedData,
+        isServerError,
+    };
+};
 
 type PropTypes = {};
 
@@ -32,20 +68,32 @@ export const News: FC<PropTypes> = () => {
         },
     ];
 
+    const {
+        isFetching,
+        fetchedData,
+        isServerError,
+    } = useApiLoader();
+
     return (
         <>
+            {isServerError && <ServerError>Server error</ServerError>}
             <StyledNews>
-                {data.map((articleData) => (
-                    <Article
-                        comments = { articleData.comments }
-                        description = { articleData.description }
-                        image = { articleData.image }
-                        likes = { articleData.likes }
-                        published = { articleData.published }
-                        tags = { articleData.tags }
-                        title = { articleData.title }
-                    />
-                ))}
+                {
+                    !isFetching ? dataNews.map((articleData, index) => (
+                        <Article
+                            comments = { articleData.comments }
+                            description = { articleData.description }
+                            image = { articleData.image }
+                            key = { `article-${index}` }
+                            likes = { articleData.likes }
+                            published = { articleData.published }
+                            tags = { articleData.tags }
+                            title = { articleData.title }
+                            user = { fetchedData[ index ] }
+                        />
+                    )) : <Spinner size = '5x' />
+                }
+
             </StyledNews>
             <Accordion data = { accordionData }/>
         </>
