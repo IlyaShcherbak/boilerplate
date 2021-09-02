@@ -1,5 +1,5 @@
 // Core
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 
 // Styles
@@ -7,6 +7,7 @@ const StyledLikesCounter = styled.span`
     font-family: Helvetica;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
 
     &::before {
         content: '♥';
@@ -16,9 +17,23 @@ const StyledLikesCounter = styled.span`
     }
 `;
 
-type LikesCounterProps = {};
-export const LikesCounter: FC<LikesCounterProps> = () => {
+type LikesCounterProps = {
+    counts: number
+};
+export const LikesCounter: FC<LikesCounterProps> = ({ counts }) => {
+    const [ likes, setLikes ] = useState<number>(counts);
+
+    function likesIncrement() {
+        if (likes === counts) {
+            setLikes(likes + 1);
+        } else {
+            setLikes(likes - 1);
+        }
+    }
+
     return (
-        <StyledLikesCounter> 315 </StyledLikesCounter>
+        <StyledLikesCounter onClick = { likesIncrement }>
+            { likes }
+        </StyledLikesCounter>
     );
 };

@@ -48,6 +48,7 @@ export const Tags = styled.div`
 
 export const ArticleText = styled.article`
     padding: 35px 34px 15px;
+    height: 150px;
 
     h1 {
         margin-top: 0;

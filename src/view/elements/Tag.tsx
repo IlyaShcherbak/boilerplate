@@ -15,10 +15,10 @@ const StyledTag = styled.span`
 `;
 
 type TagProps = {
-    text: string
+    source: string,
 };
-export const Tag: FC<TagProps> = ({ text }) => {
+export const Tag: FC<TagProps> = ({ source }) => {
     return (
-        <StyledTag> {text} </StyledTag>
+        <StyledTag>{ source }</StyledTag>
     );
 };

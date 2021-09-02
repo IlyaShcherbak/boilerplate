@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 // Components
 import { ErrorBoundary, News } from '../../components';
 
+// Styles
+import { PageContainer } from './styles';
+
 // Elements
 import { Button } from '../../elements';
 
@@ -12,12 +15,12 @@ type PropTypes = {};
 
 const CourseTasks: FC<PropTypes> = () => {
     return (
-        <>
+        <PageContainer>
             <Link to = '/'>
                 <Button>Main Page</Button>
             </Link>
             <News/>
-        </>
+        </PageContainer>
     );
 };
 

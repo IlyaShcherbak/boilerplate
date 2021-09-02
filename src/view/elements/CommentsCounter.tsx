@@ -16,9 +16,11 @@ const StyledCommentsCounter = styled.span`
     }
 `;
 
-type CommentsCounterProps = {};
-export const CommentsCounter: FC<CommentsCounterProps> = () => {
+type CommentsCounterProps = {
+    counts: number
+};
+export const CommentsCounter: FC<CommentsCounterProps> = ({ counts }) => {
     return (
-        <StyledCommentsCounter> 10 </StyledCommentsCounter>
+        <StyledCommentsCounter> { counts } </StyledCommentsCounter>
     );
 };
