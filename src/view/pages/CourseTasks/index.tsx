@@ -19,6 +19,9 @@ const CourseTasks: FC<PropTypes> = () => {
             <Link to = '/'>
                 <Button>Main Page</Button>
             </Link>
+            <Link to = '/contacts'>
+                <Button>Contacts</Button>
+            </Link>
             <News/>
         </PageContainer>
     );

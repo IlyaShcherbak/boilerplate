@@ -27,8 +27,6 @@ export const useApiLoader = () => {
             setIsFetching(true);
             const responceJson = await api.users.fetch();
 
-            console.log(responceJson);
-
             if (responceJson.status !== 200) {
                 setIsServerError(true);
             } else {
@@ -38,7 +36,6 @@ export const useApiLoader = () => {
             setIsFetching(false);
         })();
     }, []);
-    console.log(isServerError);
 
     return {
         isFetching,

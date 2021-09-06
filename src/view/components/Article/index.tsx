@@ -25,8 +25,6 @@ type PropTypes = {
 };
 
 export const Article: FC<PropTypes> = ({ title, description, published, likes, comments, image, tags, user }) => {
-    console.log(user);
-
     return (
         <ArticleContainer>
             <Header>
