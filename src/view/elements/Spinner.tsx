@@ -26,8 +26,7 @@ const Container = styled.div<{ isActive: boolean, absolute: boolean }>`
             zIndex:   1,
         }
         : {
-            width:  '100%',
-            height: '100%',
+            backgroundColor: 'initial',
         }}
 
 
@@ -41,7 +40,6 @@ let timerId: ReturnType<typeof setTimeout>;
 
 export const Spinner: FC<SpinnerProps> = ({ size = '5x', absolute = false }) => {
     const [ isActive, setIsActive ] = useState(false);
-
 
     useEffect(() => {
         timerId = setTimeout(() => void setIsActive(true), 500);

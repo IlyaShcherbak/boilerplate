@@ -2,9 +2,6 @@
 import styled from 'styled-components';
 import { Button } from '../../elements';
 
-export const PageContainer = styled.div`
-    margin: 40px 50px;
-`;
 
 export const StyledButton = styled(Button)`
     min-width: 150px;
@@ -20,10 +17,4 @@ export const StyledButton = styled(Button)`
         color: white;
         border: 2px solid black;
     }
-`;
-
-export const StyledTaskDescription = styled.p`
-    font-family: 'Helvetica', sans-serif;
-    font-size: 15px;
-    display: inline-block;
 `;

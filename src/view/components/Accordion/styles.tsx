@@ -42,7 +42,6 @@ export const AccordionAnswer = styled.p`
     margin: 0 0 22px;
     font-size: 16px;
     color: #000;
-    display: none;
 `;
 
 export const AccordionItem = styled.div`
@@ -62,10 +61,6 @@ export const AccordionItem = styled.div`
         &::after {
           content: '-';
         }
-      }
-
-      .accordion-answer {
-        display: inline-block;
       }
     }
 `;

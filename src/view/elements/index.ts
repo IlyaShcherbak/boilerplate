@@ -6,3 +6,5 @@ export * from './AdaptiveScroll';
 export * from './Tag';
 export * from './CommentsCounter';
 export * from './LikesCounter';
+export * from './PageContainer';
+export * from './PageTitle';

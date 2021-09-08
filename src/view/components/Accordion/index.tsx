@@ -11,7 +11,16 @@ type PropTypes = {
 };
 
 export const Accordion: FC<PropTypes> = ({ data, title = 'Accordion by def props' }) => {
-    const [ selectedAccordion, setSelectedAccordion ] = useState<number>(0);
+    const [ selectedAccordion, setSelectedAccordion ] = useState<Set<number>>(new Set([ 0 ]));
+
+    const updateSelectedAccordion = (index: number) => {
+        if (selectedAccordion.has(index)) {
+            selectedAccordion.delete(index);
+        } else {
+            selectedAccordion.add(index);
+        }
+        setSelectedAccordion(new Set(selectedAccordion));
+    };
 
     return (
         <AccordionContainer>
@@ -19,15 +28,17 @@ export const Accordion: FC<PropTypes> = ({ data, title = 'Accordion by def props
             {data.map((accordionItem, index) =>{
                 return (
                     <AccordionItem
-                        className = { selectedAccordion === index ? 'selected' : '' }
+                        className = { selectedAccordion.has(index) ? 'selected' : '' }
                         key = { `accordion-item-${index}` }
-                        onClick = { () => setSelectedAccordion(index) }>
+                        onClick = { () => updateSelectedAccordion(index) }>
                         <AccordionQuestion className = 'accordion-question'>
                             <span>{`${index + 1}. ${accordionItem.question}`}</span>
                         </AccordionQuestion>
-                        <AccordionAnswer className = 'accordion-answer'>
-                            { accordionItem.answer }
-                        </AccordionAnswer>
+                        { selectedAccordion.has(index) && (
+                            <AccordionAnswer className = 'accordion-answer'>
+                                { accordionItem.answer }
+                            </AccordionAnswer>
+                        )}
                     </AccordionItem>
                 );
             })}

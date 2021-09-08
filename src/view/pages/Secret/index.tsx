@@ -1,8 +1,14 @@
 //Core
 import React, { FC } from 'react';
 
+//Book
+import { book } from '../../App/Routes/book';
+
 // Components
-import { Secret as SecretComponent } from '../../components';
+import { LinkButton, Secret as SecretComponent } from '../../components';
+
+//Elements
+import { PageContainer } from '../../elements';
 
 type PropTypes = {
     value: string
@@ -10,7 +16,13 @@ type PropTypes = {
 
 const Secret: FC<PropTypes> = (props: PropTypes) => {
     return (
-        <SecretComponent value = { props.value }/>
+        <PageContainer>
+            <LinkButton
+                text = 'Back to Tasks'
+                to = { book.courseTasks }
+            />
+            <SecretComponent value = { props.value }/>
+        </PageContainer>
     );
 };
 

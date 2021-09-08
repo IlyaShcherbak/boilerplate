@@ -7,7 +7,17 @@ import { Tag, CommentsCounter, LikesCounter } from '../../elements';
 // Styles
 import { ArticleContainer, Header, Poster, Image, Tags, ArticleText, Footer, Controls, UserBlock } from './styles';
 
-type User = {
+export type ArticleType = {
+    title: string,
+    description: string,
+    published: string,
+    likes: number,
+    comments: number,
+    image: string,
+    tags: Array<string>,
+}
+
+export type User = {
     'first_name': string,
     'last_name': string,
     'avatar': string,

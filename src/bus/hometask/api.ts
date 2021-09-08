@@ -7,5 +7,10 @@ export const api = {
 
             return responce;
         },
+        fetchWithError: async () => {
+            const responce = await fetch(`${uri}/unknown/23?delay=3`);
+
+            return responce;
+        },
     },
 };

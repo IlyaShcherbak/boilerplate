@@ -6,6 +6,7 @@ import { Formik, Form, Field } from 'formik';
 import { StudentRegistrationContainer, StyledFields, StyledFieldsRadio, StyledFieldsDropdown, StyledButtonSubmit } from './styles';
 
 type PropTypes = {};
+
 type MyFormValues = {
     firstName: string,
     surname: string,
