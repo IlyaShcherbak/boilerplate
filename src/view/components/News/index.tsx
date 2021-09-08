@@ -7,6 +7,7 @@ import { api } from '../../../bus/hometask/api';
 //Components
 import { Article } from '../Article';
 import { Accordion } from '../Accordion';
+import { StudentRegistration } from '../StudentRegistration';
 
 // Elements
 import { Spinner } from '../../elements';
@@ -93,6 +94,7 @@ export const News: FC<PropTypes> = () => {
 
             </StyledNews>
             <Accordion data = { accordionData }/>
+            <StudentRegistration/>
         </>
     );
 };
