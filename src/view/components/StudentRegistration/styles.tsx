@@ -31,6 +31,10 @@ export const StyledFieldsRadio = styled(StyledFields)`
 export const StyledFieldsDropdown = styled(StyledFields)`
     width: 205px;
     margin-left: 0;
+
+    &.invalid {
+        border: 2px solid red;
+    }
 `;
 
 export const StyledButtonSubmit = styled.button`

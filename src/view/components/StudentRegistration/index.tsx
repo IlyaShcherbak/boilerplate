@@ -55,8 +55,18 @@ function validateAge(value: string) {
     return error;
 }
 
+function validateSpeciality(value: string) {
+    let error = '';
+
+    if (value === '') {
+        error = 'Required field';
+    }
+
+    return error;
+}
+
 export const StudentRegistration: FC<PropTypes> = () => {
-    const initialValues: MyFormValues = { firstName: '', surname: '', age: 6, email: '', picked: '', speciality: '' };
+    const initialValues: MyFormValues = { firstName: '', surname: '', age: 6, email: '', picked: 'Male', speciality: '' };
 
     return (
         <StudentRegistrationContainer>
@@ -135,16 +145,19 @@ export const StudentRegistration: FC<PropTypes> = () => {
                             </label>
                         </StyledFieldsRadio>
 
-                        <StyledFieldsDropdown>
+                        <StyledFieldsDropdown className = { touched.speciality && errors.speciality ? 'invalid' : '' }>
                             <label htmlFor = 'speciality'>Speciality: </label>
                             <Field
                                 as = 'select'
                                 id = 'speciality'
-                                name = 'speciality'>
+                                name = 'speciality'
+                                validate = { validateSpeciality }>
+                                <option value = ''/>
                                 <option value = 'designer'>Designer</option>
                                 <option value = 'developer'>Developer</option>
                                 <option value = 'writer'>Writer</option>
                             </Field>
+                            <span className = 'error'> { touched.speciality && errors.speciality } </span>
                         </StyledFieldsDropdown>
 
                         <StyledButtonSubmit type = 'submit'>Submit</StyledButtonSubmit>
