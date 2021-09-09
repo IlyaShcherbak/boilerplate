@@ -1,8 +1,8 @@
 //Core
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 
 // Elements
-import { Tag, CommentsCounter, LikesCounter } from '../../elements';
+import { Tag, CommentsCounter, LikesCounter, LikesCounterProps } from '../../elements';
 
 // Styles
 import { ArticleContainer, Header, Poster, Image, Tags, ArticleText, Footer, Controls, UserBlock } from './styles';
@@ -32,9 +32,11 @@ type PropTypes = {
     image: string,
     tags: Array<string>,
     user?: User,
+    likesCounter?: ReactElement<LikesCounterProps>,
 };
 
-export const Article: FC<PropTypes> = ({ title, description, published, likes, comments, image, tags, user }) => {
+export const Article: FC<PropTypes> = ({ title, description, published, likes,
+    comments, image, tags, user, likesCounter }) => {
     return (
         <ArticleContainer>
             <Header>
@@ -69,7 +71,8 @@ export const Article: FC<PropTypes> = ({ title, description, published, likes, c
                 <span>{ new Date(published).toDateString() }</span>
                 <Controls>
                     <CommentsCounter counts = { comments }/>
-                    <LikesCounter counts = { likes }/>
+                    { likesCounter ? (<LikesCounter counts = { likes }/>) : <span>{likes} likes</span> }
+
                 </Controls>
             </Footer>
         </ArticleContainer>

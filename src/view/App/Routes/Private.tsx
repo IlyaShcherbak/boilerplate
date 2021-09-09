@@ -3,8 +3,7 @@ import React, { FC, useEffect } from 'react';
 import { Switch, Route, Redirect, useHistory, useLocation } from 'react-router-dom';
 
 // Pages
-import { UserInfo, CourseTasks, HomeTaskNone, HomeTask11, HomeTask21, HomeTask23, HomeTask31, HomeTask32, HomeTask42, Secret, HomeTask51 } from '../../pages';
-import HomeTask41 from '../../pages/HomeTask4.1';
+import { UserInfo, CourseTasks, HomeTaskNone, HomeTask11, HomeTask21, HomeTask22, HomeTask23, HomeTask31, HomeTask32, HomeTask41, HomeTask42, Secret, HomeTask51, HomeTask52 } from '../../pages';
 
 
 //Helpers
@@ -42,22 +41,26 @@ export const Private: FC = () => {
                 path = { book.courseTasksCertain }
                 render = { ({ match }) => {
                     switch (match.params.index) {
-                        case '1.1':
+                        case '11':
                             return <HomeTask11 />;
-                        case '2.1':
+                        case '21':
                             return <HomeTask21 />;
-                        case '2.3':
+                        case '22':
+                            return <HomeTask22 />;
+                        case '23':
                             return <HomeTask23 />;
-                        case '3.1':
+                        case '31':
                             return <HomeTask31 />;
-                        case '3.2':
+                        case '32':
                             return <HomeTask32 />;
-                        case '4.1':
+                        case '41':
                             return <HomeTask41 />;
-                        case '4.2':
+                        case '42':
                             return <HomeTask42 />;
-                        case '5.1':
+                        case '51':
                             return <HomeTask51 />;
+                        case '52':
+                            return <HomeTask52 />;
 
                         default:
                             return <HomeTaskNone />;

@@ -4,6 +4,9 @@ import React, { FC } from 'react';
 //Components
 import { Article, ArticleType, User } from '../Article';
 
+// Elements
+import { LikesCounter } from '../../elements';
+
 // Styles
 import { StyledNews } from './styles';
 
@@ -24,6 +27,7 @@ export const News: FC<PropTypes> = ({ data, users }) => {
                             image = { articleData.image }
                             key = { `article-${index}` }
                             likes = { articleData.likes }
+                            likesCounter = { <LikesCounter/> }
                             published = { articleData.published }
                             tags = { articleData.tags }
                             title = { articleData.title }

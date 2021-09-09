@@ -17,10 +17,10 @@ const StyledLikesCounter = styled.span`
     }
 `;
 
-type LikesCounterProps = {
-    counts: number
+export type LikesCounterProps = {
+    counts?: number
 };
-export const LikesCounter: FC<LikesCounterProps> = ({ counts }) => {
+export const LikesCounter: FC<LikesCounterProps> = ({ counts = 0 }) => {
     const [ likes, setLikes ] = useState<number>(counts);
 
     function likesIncrement() {

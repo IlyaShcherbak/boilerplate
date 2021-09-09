@@ -33,36 +33,44 @@ type PropTypes = {};
 const CourseTasks: FC<PropTypes> = () => {
     const taskData = [
         {
-            description: 'aaaaaaa',
-            index:       1.1,
+            description: 'Made React app from html-file with hardcoded data.',
+            index:       11,
         },
         {
-            description: 'bbbbbbb',
-            index:       2.1,
+            description: 'Take data from .json file and display it.',
+            index:       21,
         },
         {
-            description: 'ccccccc',
-            index:       2.3,
+            description: 'Add likes counter',
+            index:       22,
         },
         {
-            description: 'ddddddd',
-            index:       3.1,
+            description: 'Make accordion component',
+            index:       23,
         },
         {
-            description: 'eeeeeee',
-            index:       3.2,
+            description: 'Fetch data fom API and add a loader that will be displayed when loading news from the API.',
+            index:       31,
         },
         {
-            description: 'fffffff',
-            index:       4.1,
+            description: 'Imitate server error and handle it.',
+            index:       32,
         },
         {
-            description: 'ggggggg',
-            index:       4.2,
+            description: 'Add route to new page Contacts.',
+            index:       41,
         },
         {
-            description: 'hhhhhhh',
-            index:       5.1,
+            description: 'Add page Secret with dinamic parameter.',
+            index:       42,
+        },
+        {
+            description: 'Make form with formik library',
+            index:       51,
+        },
+        {
+            description: 'Add validation to form',
+            index:       52,
         },
     ];
 
@@ -80,13 +88,6 @@ const CourseTasks: FC<PropTypes> = () => {
                     key = { `task-${ index }` }
                 />
             ))}
-            {/* <Link to = '/'>
-                <StyledButton>Main Page</StyledButton>
-            </Link>
-            <Link to = '/contacts'>
-                <StyledButton>Contacts</StyledButton>
-            </Link> */}
-            {/* <News/> */}
         </PageContainer>
     );
 };
