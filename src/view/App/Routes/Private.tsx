@@ -3,7 +3,8 @@ import React, { FC, useEffect } from 'react';
 import { Switch, Route, Redirect, useHistory, useLocation } from 'react-router-dom';
 
 // Pages
-import { UserInfo, CourseTasks, HomeTaskNone, HomeTask11, HomeTask21, HomeTask22, HomeTask23, HomeTask31, HomeTask32, HomeTask41, HomeTask42, Secret, HomeTask51, HomeTask52 } from '../../pages';
+import { UserInfo, CourseTasks, HomeTaskNone, HomeTask11, HomeTask21, HomeTask22, HomeTask23,
+    HomeTask31, HomeTask32, HomeTask41, HomeTask42, Secret, HomeTask51, HomeTask52, HomeTask61 } from '../../pages';
 
 
 //Helpers
@@ -61,6 +62,8 @@ export const Private: FC = () => {
                             return <HomeTask51 />;
                         case '52':
                             return <HomeTask52 />;
+                        case '61':
+                            return <HomeTask61 />;
 
                         default:
                             return <HomeTaskNone />;

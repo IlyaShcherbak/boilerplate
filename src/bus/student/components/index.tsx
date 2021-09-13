@@ -3,7 +3,14 @@ import React, { FC } from 'react';
 import { Formik, Form, Field } from 'formik';
 
 // Styles
-import { StudentRegistrationContainer, StyledFields, StyledFieldsRadio, StyledFieldsDropdown, StyledButtonSubmit } from './styles';
+import { StudentRegistrationContainer, StyledFields, StyledFieldsRadio, StyledFieldsDropdown, StyledButtonSubmit } from '../styles';
+
+//Hooks
+import { useStudent } from '../hooks/useStudent';
+
+//Types
+import { Student } from '../types';
+
 
 type PropTypes = {
     validateNameAndSurname?: (value: string) => string,
@@ -12,26 +19,20 @@ type PropTypes = {
     validateSpeciality?: (value: string) => string,
 };
 
-type MyFormValues = {
-    firstName: string,
-    surname: string,
-    age: string,
-    email: string,
-    picked: string,
-    speciality: string,
-};
-
 export const StudentRegistration: FC<PropTypes> = ({ validateNameAndSurname, validateEmail,
     validateAge, validateSpeciality }) => {
-    const initialValues: MyFormValues = { firstName: '', surname: '', age: '', email: '', picked: 'Male', speciality: '' };
+    const initialValues: Student = { firstName: '', surname: '', age: '', email: '', picked: 'Male', speciality: '' };
+
+    const { addStudent } = useStudent();
 
     return (
         <StudentRegistrationContainer>
             <h1>Student Registration</h1>
             <Formik
                 initialValues = { initialValues }
-                onSubmit = { (values, actions) => {
-                    console.log({ values, actions });
+                onSubmit = { (values) => {
+                    addStudent(values);
+                    console.log({ values });
                 } }>
 
                 {({ errors, touched }) => (

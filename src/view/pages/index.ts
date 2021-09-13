@@ -17,3 +17,4 @@ export const HomeTask41 = lazy(() => import(/* webpackChunkName: "HomeTask41" */
 export const HomeTask42 = lazy(() => import(/* webpackChunkName: "HomeTask42" */ './HomeTask4.2'));
 export const HomeTask51 = lazy(() => import(/* webpackChunkName: "HomeTask51" */ './HomeTask5.1'));
 export const HomeTask52 = lazy(() => import(/* webpackChunkName: "HomeTask52" */ './HomeTask5.2'));
+export const HomeTask61 = lazy(() => import(/* webpackChunkName: "HomeTask61" */ './HomeTask6.1'));

@@ -72,6 +72,10 @@ const CourseTasks: FC<PropTypes> = () => {
             description: 'Add validation to form',
             index:       52,
         },
+        {
+            description: 'Add Redux',
+            index:       61,
+        },
     ];
 
     return (

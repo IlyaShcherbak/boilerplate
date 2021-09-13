@@ -8,3 +8,5 @@ export * from './Article';
 export * from './Contacts';
 export * from './Secret';
 export * from './LinkButton';
+export * from './Profile';
+
