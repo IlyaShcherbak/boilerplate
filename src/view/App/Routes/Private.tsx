@@ -4,8 +4,7 @@ import { Switch, Route, Redirect, useHistory, useLocation } from 'react-router-d
 
 // Pages
 import { UserInfo, CourseTasks, HomeTaskNone, HomeTask11, HomeTask21, HomeTask22, HomeTask23,
-    HomeTask31, HomeTask32, HomeTask41, HomeTask42, Secret, HomeTask51, HomeTask52, HomeTask61 } from '../../pages';
-
+    HomeTask31, HomeTask32, HomeTask41, HomeTask42, Secret, HomeTask51, HomeTask52, HomeTask61, HomeTask71, HomeTask72 } from '../../pages';
 
 //Helpers
 import { book } from './book';
@@ -38,7 +37,6 @@ export const Private: FC = () => {
                 <CourseTasks />
             </Route>
             <Route
-                exact
                 path = { book.courseTasksCertain }
                 render = { ({ match }) => {
                     switch (match.params.index) {
@@ -64,6 +62,10 @@ export const Private: FC = () => {
                             return <HomeTask52 />;
                         case '61':
                             return <HomeTask61 />;
+                        case '71':
+                            return <HomeTask71 />;
+                        case '72':
+                            return <HomeTask72 />;
 
                         default:
                             return <HomeTaskNone />;

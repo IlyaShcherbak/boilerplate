@@ -76,6 +76,14 @@ const CourseTasks: FC<PropTypes> = () => {
             description: 'Add Redux',
             index:       61,
         },
+        {
+            description: 'Fetching People',
+            index:       71,
+        },
+        {
+            description: 'Fetching Films',
+            index:       72,
+        },
     ];
 
     return (

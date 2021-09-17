@@ -15,6 +15,5 @@ export const useStudent = () => {
         dispatch(addStudentAction(sudent));
     };
 
-    // const student = useSelector<SelectorState, defaultStateType>((state) => state.theme);
     return { current: students[ students.length - 1 ], students, addStudent };
 };

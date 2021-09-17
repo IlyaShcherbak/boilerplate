@@ -8,9 +8,10 @@ import { TableContainer, TableRow, TableCell, TableHead } from './styles';
 type PropTypes = {
     data: Array<Array<string>>,
     headColor?: string,
+    onRowClick?: (rowId: number) => void
 };
 
-export const Table: FC<PropTypes> = ({ data, headColor = 'pink' }) => {
+export const Table: FC<PropTypes> = ({ data, headColor = 'pink', onRowClick }) => {
     const [ selectedRow, setSelectedRow ] = useState<number>();
 
     return (
@@ -20,19 +21,26 @@ export const Table: FC<PropTypes> = ({ data, headColor = 'pink' }) => {
                     return (
                         <TableRow
                             className = { `${index === 0 ? 'table-header' : ''} ${selectedRow === index ? 'selected' : ''}` }
-                            onClick = { () => setSelectedRow(index) }>
+                            key = { `row-${index + 1}` }
+                            onClick = { () => {
+                                if (index !== 0) {
+                                    onRowClick && onRowClick(index - 1);
+                                    setSelectedRow(index);
+                                }
+                            } }>
                             {
                                 row.map((cell) => {
                                     if (index === 0) {
                                         return (
                                             <TableHead
-                                                bgColor = { headColor }>
+                                                bgColor = { headColor }
+                                                key = { `row-head-${cell}` }>
                                                 {cell}
                                             </TableHead>
                                         );
                                     }
 
-                                    return <TableCell >{cell}</TableCell>;
+                                    return <TableCell key = { `row-head-${cell}` } >{cell}</TableCell>;
                                 })
                             }
                         </TableRow>

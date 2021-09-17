@@ -9,4 +9,6 @@ export * from './Contacts';
 export * from './Secret';
 export * from './LinkButton';
 export * from './Profile';
-
+export * from './Profile';
+export * from './StudentRegistration';
+export * from './People';

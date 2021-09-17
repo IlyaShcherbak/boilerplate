@@ -2,8 +2,7 @@
 import React, { FC } from 'react';
 
 //Components
-import { StudentRegistration } from './components';
-import { Profile } from '../../view/components';
+import { Profile, StudentRegistration } from '../../view/components';
 
 //Helpers
 import { validateAge, validateEmail, validateNameAndSurname, validateSpeciality } from '../../tools/helpers/validations';
@@ -12,7 +11,7 @@ type PropTypes = {};
 
 export const ReduxApp: FC<PropTypes> = () => {
     return (
-        <>
+        <section>
             <StudentRegistration
                 validateAge = { validateAge }
                 validateEmail = { validateEmail }
@@ -20,6 +19,6 @@ export const ReduxApp: FC<PropTypes> = () => {
                 validateSpeciality = { validateSpeciality }
             />
             <Profile />
-        </>
+        </section>
     );
 };

@@ -3,13 +3,13 @@ import React, { FC } from 'react';
 import { Formik, Form, Field } from 'formik';
 
 // Styles
-import { StudentRegistrationContainer, StyledFields, StyledFieldsRadio, StyledFieldsDropdown, StyledButtonSubmit } from '../styles';
+import { StudentRegistrationContainer, StyledFields, StyledFieldsRadio, StyledFieldsDropdown, StyledButtonSubmit } from './styles';
 
 //Hooks
-import { useStudent } from '../hooks/useStudent';
+import { useStudent } from '../../../bus/student/hooks/useStudent';
 
 //Types
-import { Student } from '../types';
+import { Student } from '../../../bus/student/types';
 
 
 type PropTypes = {

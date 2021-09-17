@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 
 // Components
 import { LinkButton } from '../../components';
-// import { StudentRegistration } from '../../../bus/student/components';
 
 //Elements
 import { PageContainer, PageTitle } from '../../elements';

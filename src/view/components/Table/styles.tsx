@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 export const TableContainer = styled.table`
     margin: 15px 40px 30px;
+    max-height: 600px;
+    min-width: 300px;
 `;
 
 type thProps = {

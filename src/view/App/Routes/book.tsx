@@ -6,6 +6,8 @@ type Book = {
     userInfo: string,
     courseTasks: string,
     courseTasksCertain: string,
+    person: string,
+    film: string,
 }
 
 export const book: Book = {
@@ -16,4 +18,6 @@ export const book: Book = {
     userInfo:           '/user-info',
     courseTasks:        '/course-tasks',
     courseTasksCertain: '/course-tasks/:index',
+    person:             '/people/:id',
+    film:               '/films/:id',
 };
