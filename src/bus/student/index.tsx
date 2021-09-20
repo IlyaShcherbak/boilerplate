@@ -1,24 +1,20 @@
-//Core
-import React, { FC } from 'react';
+//Hooks
+import { useDispatch } from 'react-redux';
+import { useSelector } from '../../tools/hooks';
 
-//Components
-import { Profile, StudentRegistration } from '../../view/components';
 
-//Helpers
-import { validateAge, validateEmail, validateNameAndSurname, validateSpeciality } from '../../tools/helpers/validations';
+//Actions
+import { addStudentAction } from './actions';
+import { Student } from './types';
 
-type PropTypes = {};
 
-export const ReduxApp: FC<PropTypes> = () => {
-    return (
-        <section>
-            <StudentRegistration
-                validateAge = { validateAge }
-                validateEmail = { validateEmail }
-                validateNameAndSurname = { validateNameAndSurname }
-                validateSpeciality = { validateSpeciality }
-            />
-            <Profile />
-        </section>
-    );
+export const useStudent = () => {
+    const data = useSelector(({ student }) => student);
+    const dispatch = useDispatch();
+
+    const addStudent = (data: Student) => {
+        dispatch(addStudentAction(data));
+    };
+
+    return { data, addStudent };
 };

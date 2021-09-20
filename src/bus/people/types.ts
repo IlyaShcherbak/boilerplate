@@ -1,5 +1,7 @@
+//
 export type Person = {
     name: string,
+    height: string,
     birth_year: string,
     eye_color: string,
     gender: string,
@@ -28,17 +30,17 @@ export type PeopleStateType = {
 //     PEOPLE_FETCH_ASYNC: 'PEOPLE_FETCH_ASYNC ',
 
 
-export const PEOPLE_START_FETCHING = 'PEOPLE_START_FETCHING';
-export type StartFetchingPersonActionType = {
-    type: typeof PEOPLE_START_FETCHING;
-};
-export type StartFetchingPersonContract = () => StartFetchingPersonActionType
+// export const PEOPLE_START_FETCHING = 'PEOPLE_START_FETCHING';
+// export type StartFetchingPersonActionType = {
+//     type: typeof PEOPLE_START_FETCHING;
+// };
+// export type StartFetchingPersonContract = () => StartFetchingPersonActionType
 
-export const PEOPLE_STOP_FETCHING = 'PEOPLE_STOP_FETCHING';
-export type StopFetchingPersonActionType = {
-    type: typeof PEOPLE_STOP_FETCHING;
-};
-export type StopFetchingPersonContract = () => StopFetchingPersonActionType
+// export const PEOPLE_STOP_FETCHING = 'PEOPLE_STOP_FETCHING';
+// export type StopFetchingPersonActionType = {
+//     type: typeof PEOPLE_STOP_FETCHING;
+// };
+// export type StopFetchingPersonContract = () => StopFetchingPersonActionType
 
 export const PEOPLE_FILL = 'PEOPLE_FILL';
 export type FillPersonActionType = {
@@ -47,17 +49,17 @@ export type FillPersonActionType = {
 };
 export type FillPersonContract = (payload: People) => FillPersonActionType
 
-export const PEOPLE_SET_FETCHING_ERROR = 'PEOPLE_SET_FETCHING_ERROR';
-export type SetErrorFetchingPersonActionType = {
-    type: typeof PEOPLE_SET_FETCHING_ERROR;
-    payload: string,
-};
-export type SetErrorFetchingPersonContract = (payload: string) => SetErrorFetchingPersonActionType
+// export const PEOPLE_SET_FETCHING_ERROR = 'PEOPLE_SET_FETCHING_ERROR';
+// export type SetErrorFetchingPersonActionType = {
+//     type: typeof PEOPLE_SET_FETCHING_ERROR;
+//     payload: string,
+// };
+// export type SetErrorFetchingPersonContract = (payload: string) => SetErrorFetchingPersonActionType
 
-export type dispatchPersonActionType = (action: PeopleActionTypes) => void;
+// export type dispatchPersonActionType = (action: PeopleActionTypes) => void;
 
 export type PeopleActionTypes =
-    | StartFetchingPersonActionType
-    | StopFetchingPersonActionType
+    // | StartFetchingPersonActionType
+    // | StopFetchingPersonActionType
     | FillPersonActionType
-    | SetErrorFetchingPersonActionType
+    // | SetErrorFetchingPersonActionType

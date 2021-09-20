@@ -18,13 +18,14 @@ import { book } from '../../App/Routes/book';
 import { useFilmsleLoader } from '../../../tools/hooks/useFilmsLoader';
 
 //Styles
-import { PeopleListSection } from './styles';
+import { FilmsListSection } from './styles';
 
 
 type PropTypes = {};
 
-const HomeTask71: FC<PropTypes> = () => {
+const HomeTask72: FC<PropTypes> = () => {
     const { isFetching, data, error } = useFilmsleLoader();
+
     const match = useRouteMatch<{id: string}>(`${book.courseTasks}/72${book.film}`);
 
     const history = useHistory();
@@ -40,17 +41,17 @@ const HomeTask71: FC<PropTypes> = () => {
                 to = { book.courseTasks }
             />
             { !isFetching ? !error && (
-                <PeopleListSection>
+                <FilmsListSection>
                     <FilmsList
                         dataList = { data }
                         selectItem = { selectFilm }
                     />
                     { match && match.params && <FilmInfo { ...data[ Number(match.params.id) ] } />}
-                </PeopleListSection>
+                </FilmsListSection>
             ) : <Spinner size = '10x' />
             }
         </PageContainer>
     );
 };
 
-export default HomeTask71;
+export default HomeTask72;

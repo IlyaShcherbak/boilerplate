@@ -1,17 +1,17 @@
-//Core
+// Core
 import React, { FC } from 'react';
 
 // Components
-import { LinkButton } from '../../components';
+import { LinkButton, Profile, StudentRegistration } from '../../components';
 
-//Elements
+// Elements
 import { PageContainer, PageTitle } from '../../elements';
 
-//Helpers
+// Helpers
 import { book } from '../../App/Routes/book';
 
-//Components
-import { ReduxApp } from '../../../bus/student';
+//Validations
+import { validateAge, validateEmail, validateNameAndSurname, validateSpeciality } from '../../../tools/helpers/validations';
 
 
 type PropTypes = {};
@@ -24,7 +24,15 @@ const HomeTask61: FC<PropTypes> = () => {
                 text = 'Back to Tasks'
                 to = { book.courseTasks }
             />
-            <ReduxApp />
+            <section>
+                <StudentRegistration
+                    validateAge = { validateAge }
+                    validateEmail = { validateEmail }
+                    validateNameAndSurname = { validateNameAndSurname }
+                    validateSpeciality = { validateSpeciality }
+                />
+                <Profile />
+            </section>
         </PageContainer>
     );
 };

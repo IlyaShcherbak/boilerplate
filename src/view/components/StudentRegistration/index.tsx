@@ -6,7 +6,7 @@ import { Formik, Form, Field } from 'formik';
 import { StudentRegistrationContainer, StyledFields, StyledFieldsRadio, StyledFieldsDropdown, StyledButtonSubmit } from './styles';
 
 //Hooks
-import { useStudent } from '../../../bus/student/hooks/useStudent';
+import { useStudent } from '../../../bus/student';
 
 //Types
 import { Student } from '../../../bus/student/types';

@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 import { Person } from '../../../bus/people/types';
 
 //Styles
-import { PersonInfoContainer, StyledInfo, StyledInfoTitle, StyledInfoItem } from './styles';
+import { PersonInfoContainer, StyledInfo, StyledInfoTitle, StyledInfoItem, StyledLink } from './styles';
 
 
 export const PersonInfo: FC<Person> = (props) => {
@@ -23,26 +23,32 @@ export const PersonInfo: FC<Person> = (props) => {
             <StyledInfo>Hair color: {props.hair_color}</StyledInfo>
             <StyledInfo>Mass: {props.mass}</StyledInfo>
             <StyledInfo>Skin color: {props.skin_color}</StyledInfo>
-            <StyledInfo>Homeworld: {props.homeworld}</StyledInfo>
+
+            <StyledInfo>Character's homeworld:
+                <StyledLink href = { props.homeworld }> {props.name}'s homeworld</StyledLink>
+            </StyledInfo>
+
             <StyledInfo>Films: {
-                props.films.map((film) => {
-                    return <StyledInfoItem> {film}</StyledInfoItem>;
+                props.films.map((film, index) => {
+                    return (
+                        <StyledInfoItem>
+                            <StyledLink href = { film }>Link to film info: {index + 1}</StyledLink>
+                        </StyledInfoItem>
+                    );
                 })
             }
             </StyledInfo>
             <StyledInfo>Starships: {
-                props.starships.map((ship) => {
-                    return <StyledInfoItem> {ship}</StyledInfoItem>;
+                props.starships.map((ship, index) => {
+                    return (
+                        <StyledInfoItem>
+                            <StyledLink href = { ship }>Link to starship info: {index + 1}</StyledLink>
+                        </StyledInfoItem>
+                    );
                 })
             }
             </StyledInfo>
-            <StyledInfo>Vehicles: {
-                props.vehicles.map((vehicle) => {
-                    return <StyledInfoItem> {vehicle}</StyledInfoItem>;
-                })
-            }
-            </StyledInfo>
-            <StyledInfo>Url: {props.url}</StyledInfo>
+            <StyledInfo>Url: <StyledLink href = { props.url }>Info about {props.name}</StyledLink></StyledInfo>
             <StyledInfo>Created: {props.created}</StyledInfo>
             <StyledInfo>Edited: {props.edited}</StyledInfo>
         </PersonInfoContainer>

@@ -18,3 +18,14 @@ export const StyledInfoItem = styled.p`
     margin-left: 20px;
     letter-spacing: 1px;
 `;
+
+export const StyledLink = styled.a`
+    cursor: pointer;
+    color: #00c0ff;
+    text-decoration: none;
+
+     :visited{
+        color: #00c0ff;
+     }
+`;
+

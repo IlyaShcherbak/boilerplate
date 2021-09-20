@@ -4,7 +4,8 @@ import { Switch, Route, Redirect, useHistory, useLocation } from 'react-router-d
 
 // Pages
 import { UserInfo, CourseTasks, HomeTaskNone, HomeTask11, HomeTask21, HomeTask22, HomeTask23,
-    HomeTask31, HomeTask32, HomeTask41, HomeTask42, Secret, HomeTask51, HomeTask52, HomeTask61, HomeTask71, HomeTask72 } from '../../pages';
+    HomeTask31, HomeTask32, HomeTask41, HomeTask42, Secret, HomeTask51, HomeTask52, HomeTask61,
+    HomeTask71, HomeTask72 } from '../../pages';
 
 //Helpers
 import { book } from './book';

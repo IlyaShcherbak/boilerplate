@@ -1,5 +1,5 @@
 //Core
-import { Reducer } from 'react';
+import { Reducer } from 'redux';
 
 //Types
 import * as types from './types';

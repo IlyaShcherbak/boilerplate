@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from '../../../tools/hooks';
 
 const initialState = {
-    isOnline:        navigator.onLine,
-    isTodosFetching: true,
+    isOnline:         navigator.onLine,
+    isTodosFetching:  false,
+    isPeopleFetching: false,
 };
 
 type TogglersState = typeof initialState;
@@ -36,8 +37,9 @@ export const togglersReducer: Reducer<TogglersState, TogglersActions> = (state =
 
         case RESET_TOGGLERS_TO_INITIAL:
             return {
-                isOnline:        navigator.onLine,
-                isTodosFetching: false,
+                isOnline:         navigator.onLine,
+                isTodosFetching:  false,
+                isPeopleFetching: false,
             };
 
         default: return state;

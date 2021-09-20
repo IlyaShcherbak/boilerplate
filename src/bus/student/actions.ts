@@ -1,4 +1,4 @@
-// Instruments
+// Types
 import * as types from './types';
 
 export const addStudentAction: types.SetStudentContract = (payload) => ({

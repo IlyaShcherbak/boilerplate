@@ -3,16 +3,16 @@ const uri = 'https://swapi.dev/api';
 export const api = {
     people: {
         fetch: async () => {
-            const responce = await fetch(`${uri}/people`);
+            const response = await fetch(`${uri}/people`);
 
-            return responce;
+            return response;
         },
     },
     films: {
         fetch: async () => {
-            const responce = await fetch(`${uri}/films`);
+            const response = await fetch(`${uri}/films`);
 
-            return responce;
+            return response;
         },
     },
 };

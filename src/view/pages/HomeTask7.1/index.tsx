@@ -14,7 +14,8 @@ import { PageContainer, PageTitle, Spinner } from '../../elements';
 import { book } from '../../App/Routes/book';
 
 //Hooks
-import { usePeopleLoader } from '../../../tools/hooks/usePeopleLoader';
+import { usePeople } from '../../../bus/people';
+// import { usePeopleLoader } from '../../../tools/hooks/usePeopleLoader';
 
 //Styles
 import { PeopleListSection } from './styles';
@@ -23,7 +24,9 @@ import { PeopleListSection } from './styles';
 type PropTypes = {};
 
 const HomeTask71: FC<PropTypes> = () => {
-    const { isFetching, data, error } = usePeopleLoader();
+    // const { isFetching, data, error } = usePeopleLoader();
+    const { isFetching, data } = usePeople();
+
     const match = useRouteMatch<{id: string}>(`${book.courseTasks}/71${book.person}`);
 
     const history = useHistory();
@@ -38,7 +41,7 @@ const HomeTask71: FC<PropTypes> = () => {
                 text = 'Back to Tasks'
                 to = { book.courseTasks }
             />
-            { !isFetching ? !error && (
+            { !isFetching ? (
                 <PeopleListSection>
                     <People
                         peopleList = { data }

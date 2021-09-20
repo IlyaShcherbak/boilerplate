@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 import { Film } from '../../../bus/films/types';
 
 //Styles
-import { FilmInfoContainer, StyledInfo, StyledInfoTitle, StyledInfoItem } from './styles';
+import { FilmInfoContainer, StyledInfo, StyledInfoTitle } from './styles';
 
 
 export const FilmInfo: FC<Film> = (props) => {
@@ -22,30 +22,30 @@ export const FilmInfo: FC<Film> = (props) => {
             <StyledInfo>Director: {props.director}</StyledInfo>
             <StyledInfo>Producer: {props.producer}</StyledInfo>
             <StyledInfo>Release date: {props.release_date}</StyledInfo>
-            <StyledInfo>Planets: {
+            {/* <StyledInfo>Planets: {
                 props.planets.map((planet) => {
                     return <StyledInfoItem> {planet}</StyledInfoItem>;
                 })
             }
-            </StyledInfo>
-            <StyledInfo>Characters: {
+            </StyledInfo> */}
+            {/* <StyledInfo>Characters: {
                 props.characters.map((char) => {
                     return <StyledInfoItem> {char}</StyledInfoItem>;
                 })
             }
-            </StyledInfo>
-            <StyledInfo>Starships: {
+            </StyledInfo> */}
+            {/* <StyledInfo>Starships: {
                 props.starships.map((ship) => {
                     return <StyledInfoItem> {ship}</StyledInfoItem>;
                 })
             }
-            </StyledInfo>
-            <StyledInfo>Vehicles: {
+            </StyledInfo> */}
+            {/* <StyledInfo>Vehicles: {
                 props.vehicles.map((vehicle) => {
                     return <StyledInfoItem> {vehicle}</StyledInfoItem>;
                 })
             }
-            </StyledInfo>
+            </StyledInfo> */}
             <StyledInfo>Url: {props.url}</StyledInfo>
             <StyledInfo>Created: {props.created}</StyledInfo>
             <StyledInfo>Edited: {props.edited}</StyledInfo>

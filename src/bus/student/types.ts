@@ -14,7 +14,7 @@ export type StudentStateType = {
     students: Students
 }
 
-// ----------------------------- Create -----------------------------
+// ----------------------------- Add -----------------------------
 export const ADD_STUDENT = 'ADD_STUDENT';
 export type AddStudentActionType = {
     type: typeof ADD_STUDENT;
