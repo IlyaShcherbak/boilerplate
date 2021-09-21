@@ -14,7 +14,7 @@ export type ArticleType = {
     likes: number,
     comments: number,
     image: string,
-    tags: Array<string>,
+    tags:Array<string>,
 }
 
 export type User = {
