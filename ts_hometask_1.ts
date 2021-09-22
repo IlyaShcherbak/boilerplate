@@ -25,7 +25,9 @@ const defaults: options = {
 
 const round: (v: number) => number = (v: number) => Math.round(v);
 const pow: (p: number) => number  = (p: number) => Math.pow(10, p);
-const rounding: (value: number, increment: number) => number = (value: number, increment: number) => round(value / increment) * increment;
+const rounding: (value: number, increment: number) => number = (value: number, increment: number) => round(
+    value / increment,
+) * increment;
 
 // const groupRegex: RegExp = /(\d)(?=(\d{3})+\b)/g;
 // const vedicRegex: RegExp = /(\d)(?=(\d\d)+\d\b)/g;
@@ -128,6 +130,7 @@ class Currency {
     divide(number: number) {
         let { intValue, _settings } = this;
 
+        // eslint-disable-next-line no-return-assign
         return new Currency(intValue /= this.parse(number, _settings, false), _settings);
     }
 
@@ -137,10 +140,12 @@ class Currency {
         let split = Math[ intValue >= 0 ? 'floor' : 'ceil' ](intValue / count);
         let pennies = Math.abs(intValue - (split * count));
 
+        // eslint-disable-next-line no-param-reassign
         for (; count !== 0; count--) {
             let item = new Currency(split / _precision, _settings);
 
             // Add any left over pennies
+            // eslint-disable-next-line no-plusplus
             pennies-- > 0 && (item = intValue >= 0 ? item.add(1 / _precision) : item.subtract(1 / _precision));
 
             distribution.push(item);
@@ -150,12 +155,14 @@ class Currency {
     }
 
     dollars(): number {
+        // eslint-disable-next-line no-bitwise
         return ~~this.value;
     }
 
     cents(): number {
         let { intValue, _precision } = this;
 
+        // eslint-disable-next-line no-bitwise
         return ~~(intValue % _precision);
     }
 
@@ -167,6 +174,7 @@ class Currency {
         let cents = values[ 1 ];
 
         // set symbol formatting
+        // eslint-disable-next-line no-param-reassign
         typeof  useSymbol === 'undefined' && (useSymbol = formatWithSymbol);
 
         return (this.value >= 0 ? pattern : negativePattern)

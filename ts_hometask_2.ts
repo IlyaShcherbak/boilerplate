@@ -43,7 +43,7 @@ class MyEmitter implements EmitterType {
         return this._offByHandler(type, handler);
     };
 
-    trigger = (event: MyEvent, args: any) => {
+    trigger = <T extends unknown>(event: MyEvent, args: T[]) => {
     // if (!(event instanceof Event)) {
     //   event = new Event(event);
     // }
